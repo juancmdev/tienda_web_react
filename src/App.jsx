@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Layout from './components/layout/Layout'
 
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1 className='text-4xl'>Hello</h1>
+      <Layout/>
     </>
   )
 }
