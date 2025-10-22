@@ -3,9 +3,9 @@ const ProductCard = ({ product }) => {
       <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
         {/* Zona de Imagen (Asumimos que product.image tiene la ruta) */}
         <img 
-          src={product.image} 
+          src={product.imageUrl} 
           alt={product.name} 
-          className="w-full h-48 object-cover" 
+          className="w-full h-48 object-contain" 
         />
         
         <div className="p-5">

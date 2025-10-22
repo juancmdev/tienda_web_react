@@ -6,6 +6,19 @@ import ProductCard from "../components/ProductCard";
 
 const Store = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    imageUrl: '',
+  });
+
+  const openModal = (imageUrl) => {
+    setModalState({ isOpen: true, imageUrl });
+  };
+
+  const closeModal = () => {
+    setModalState({ isOpen: false, imageUrl: '' });
+  };
+  
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
