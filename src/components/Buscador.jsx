@@ -1,7 +1,7 @@
 // Recibe la función para manejar el cambio del término de búsqueda
 const Buscador = ({ onBusquedaChange }) => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 mt-8 w-[50%] m-auto">
       <input
         type="text"
         placeholder="Escribe el aroma que buscas (ej: Vainilla)"
