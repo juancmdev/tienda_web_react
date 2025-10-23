@@ -1,12 +1,17 @@
-import React from 'react'
+import { useParams } from "react-router";
+import products from "../data/products";
 
 const ProductDetailPage = () => {
-    return (
-      <div className="container mx-auto p-8">
-        <h1 className="text-3xl font-bold">Detalle del Producto</h1>
-        {/* Aquí irá el contenido */}
-      </div>
-    );
-  };
-  
-  export default ProductDetailPage;
+  const { id } = useParams();
+
+  const currentProduct = products.find((product) => product.id === id);
+
+
+  return (
+    <div className="container mx-auto p-8">
+      {currentProduct ? <h1 className="text-center text-3xl font-bold">{currentProduct.name}</h1> : <h1 className="text-center text-3xl font-bold">Producto no encontrado.</h1>}
+    </div>
+  );
+};
+
+export default ProductDetailPage;
