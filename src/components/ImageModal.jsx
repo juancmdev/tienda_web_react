@@ -6,12 +6,12 @@ const ImageModal = ({ imageUrl, isOpen, onClose }) => {
   return (
     // Capa de fondo oscura (fixed, cubre todo, fondo semitransparente, z-index alto)
     <div
-      className="fixed inset-0 bg-black bg-opacity-100 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 transition-opacity duration-300 ease-in-out"
       onClick={onClose} // Cierra el modal si se hace clic en el fondo
     >
       {/* Contenedor de la Imagen */}
       <div
-        className="max-w-4xl max-h-full overflow-hidden"
+        className="max-w-4xl max-h-full overflow-hidden transform transition-transform duration-300 ease-out"
         // Esto evita que el clic en la imagen cierre el modal
         onClick={(e) => e.stopPropagation()}
       >
