@@ -1,4 +1,4 @@
-const ProductCard = ({ product, onImageClick }) => {
+const ProductCard = ({ product}) => { // Recibiría onImageClick para el modal
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       {/* Zona de Imagen (Asumimos que product.image tiene la ruta) */}
