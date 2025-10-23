@@ -2,13 +2,13 @@ import { useState } from "react";
 import Buscador from "../components/Buscador";
 import products from "../data/products";
 import ProductCard from "../components/ProductCard";
-
+import ImageModal from "../components/ImageModal";
 
 const Store = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [modalState, setModalState] = useState({
     isOpen: false,
-    imageUrl: '',
+    imageUrl: "",
   });
 
   const openModal = (imageUrl) => {
@@ -16,9 +16,8 @@ const Store = () => {
   };
 
   const closeModal = () => {
-    setModalState({ isOpen: false, imageUrl: '' });
+    setModalState({ isOpen: false, imageUrl: "" });
   };
-  
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,9 +28,14 @@ const Store = () => {
       <Buscador onBusquedaChange={setSearchTerm} />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {filteredProducts.map((product, index) => (
-          <ProductCard product={product} key={index} />
+          <ProductCard product={product} onImageClick={openModal} key={index} />
         ))}
       </div>
+      <ImageModal
+        imageUrl={modalState.imageUrl}
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+      />
     </>
   );
 };
