@@ -1,3 +1,5 @@
+import { formatCOP } from "../utils/format";
+
 const ProductCard = ({ product}) => { // Recibiría onImageClick para el modal
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
@@ -24,7 +26,7 @@ const ProductCard = ({ product}) => { // Recibiría onImageClick para el modal
 
         {/* Precio */}
         <p className="text-2xl font-bold text-indigo-600 mb-4">
-          ${product.price}
+          {formatCOP(product.price) } COP
         </p>
 
         {/* Botón de Pago Mercado Pago (Redirección directa) */}
