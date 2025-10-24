@@ -26,9 +26,9 @@ const Store = () => {
   return (
     <>
       <Buscador onBusquedaChange={setSearchTerm} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-[85%] mx-auto mt-10">
         {filteredProducts.map((product, index) => (
-          <ProductCard product={product}  key={index} /> //onImageClick={openModal} si requiero el modal
+          <ProductCard product={product} key={index} /> //onImageClick={openModal} si requiero el modal
         ))}
       </div>
       {/* <ImageModal
