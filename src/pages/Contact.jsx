@@ -1,6 +1,3 @@
-// src/pages/Contact.jsx
-import React from "react";
-
 const Contact = () => {
   return (
     <div className="container mx-auto p-8 max-w-lg">
@@ -13,7 +10,7 @@ const Contact = () => {
         con el enlace que Formspree te da.
       */}
       <form
-        action="https://formspree.io/f/TU_URL_DE_FORMSPREE"
+        action="https://formspree.io/f/mblpldbn"
         method="POST"
         className="space-y-6" // Añade espacio vertical entre campos
       >
