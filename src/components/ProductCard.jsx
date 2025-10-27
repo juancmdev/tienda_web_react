@@ -1,5 +1,5 @@
 import { formatCOP } from "../utils/format";
-import CartContext from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
 import { useContext } from "react";
 import { Link } from "react-router";
 
@@ -38,15 +38,13 @@ const ProductCard = ({ product }) => {
           {formatCOP(product.price)} COP
         </p>
 
-        {/* Botón de Pago Mercado Pago (Redirección directa) */}
-        <a
-          href={product.linkPagoMP}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Botón de Pago Añadir al carrito */}
+        <button
+          onClick={() => addToCart(product)} // Llamamos a la función addToCart del contexto
           className="block w-full text-center py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-150 cursor-pointer"
         >
           Añadir al carrito
-        </a>
+        </button>
       </div>
     </div>
   );
