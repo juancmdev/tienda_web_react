@@ -13,6 +13,8 @@ const Cart = () => {
     );
   }
 
+  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
   return (
     <div>
       <h1 className="text-4xl text-center font-bold mt-10 mb-4">
