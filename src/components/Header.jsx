@@ -11,7 +11,7 @@ const Header = () => {
   ];
 
   const { cartItems } = useContext(CartContext); //Consumimos el contexto
-  const cartCount = cartItems.length; //Calculamos la cantidad de elementos en el carrito
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0); //Calculamos la cantidad de elementos en el carrito
 
   return (
     <header className="bg-indigo-600 p-4 shadow-md">

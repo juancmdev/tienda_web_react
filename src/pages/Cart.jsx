@@ -14,7 +14,10 @@ const Cart = () => {
     );
   }
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + (item.quantity || 1) * item.price,
+    0
+  );
 
   return (
     <div>
@@ -26,7 +29,7 @@ const Cart = () => {
           key={item.id}
           className="flex justify-center items-center text-2xl text-center font-bold mt-2"
         >
-          *{item.name}
+          *{item.name} - Cant: {item.quantity}
           <MdDeleteForever
             className="text-3xl cursor-pointer hover:text-gray-700"
             onClick={() => removeFromCart(item.id)}
