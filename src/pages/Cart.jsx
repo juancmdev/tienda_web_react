@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { MdDeleteForever } from "react-icons/md";
+import { formatCOP } from "../utils/format";
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useContext(CartContext);
@@ -32,6 +33,9 @@ const Cart = () => {
           />
         </div>
       ))}
+      <h3 className="text-3xl text-center font-bold bg-indigo-100">
+        Total = {formatCOP(totalPrice)}
+      </h3>
     </div>
   );
 };
