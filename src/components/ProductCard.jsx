@@ -1,7 +1,11 @@
 import { formatCOP } from "../utils/format";
+import CartContext from "../context/CartContext";
+import { useContext } from "react";
 import { Link } from "react-router";
 
 const ProductCard = ({ product }) => {
+  const { addToCart } = useContext(CartContext); //Extraigo la función addToCart del contexto
+
   // Recibiría onImageClick para el modal
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
@@ -39,9 +43,9 @@ const ProductCard = ({ product }) => {
           href={product.linkPagoMP}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full text-center py-3 bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-600 transition duration-150 cursor-pointer"
+          className="block w-full text-center py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition duration-150 cursor-pointer"
         >
-          Comprar
+          Añadir al carrito
         </a>
       </div>
     </div>
