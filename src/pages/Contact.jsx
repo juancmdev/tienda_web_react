@@ -1,3 +1,6 @@
+import { MdWhatsapp } from "react-icons/md";
+import { Link } from "react-router";
+
 const Contact = () => {
   return (
     <div className="container mx-auto p-8 max-w-lg">
@@ -75,6 +78,25 @@ const Contact = () => {
           </button>
         </div>
       </form>
+      {/* Separador visual */}
+      <div className="relative flex justify-center items-center py-8">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t border-gray-300"></div>
+        </div>
+        <span className="relative bg-white px-3 text-xl font-medium text-gray-500">
+          O contáctanos directamente
+        </span>
+      </div>
+      {/* Botón de WhatsApp destacado */}
+      <a
+        href="https://wa.me/573206462328"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center space-x-3 w-full py-3 bg-green-500 text-white font-extrabold rounded-xl shadow-lg hover:bg-green-600 transition duration-150 transform hover:scale-[1.01] mb-10"
+      >
+        <MdWhatsapp className="h-7 w-7" />
+        <span className="text-lg">Chatea con nosotros por WhatsApp</span>
+      </a>
     </div>
   );
 };
