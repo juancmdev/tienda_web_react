@@ -40,8 +40,47 @@ const CartProvider = ({ children }) => {
     setCartItems(cartItems.filter((item) => item.id !== productId));
   };
 
+  // Aumentar la cantidad de un ítem
+  const increaseQuantity = (productId) => {
+    const updatedCart = cartItems.map((item) => {
+      if (item.id === productId) {
+        // Devolvemos el ítem con la cantidad incrementada
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    setCartItems(updatedCart);
+  };
+
+  // Disminuir la cantidad de un ítem
+  const decreaseQuantity = (productId) => {
+    const existingItem = cartItems.find((item) => item.id === productId);
+
+    if (existingItem && existingItem.quantity > 1) {
+      const updatedCart = cartItems.map((item) => {
+        if (item.id === productId) {
+          // Devolvemos el ítem con la cantidad decrementada
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return item;
+      });
+      setCartItems(updatedCart);
+    } else if (existingItem && existingItem.quantity === 1) {
+      // Si la cantidad llega a 1, lo eliminamos completamente del carrito (opcional pero recomendado)
+      removeFromCart(productId);
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
