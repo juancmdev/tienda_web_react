@@ -41,7 +41,7 @@ const Header = () => {
             {/* Icono del Carrito con Contador */}
             <Link
               to="/cart"
-              className="relative p-2 rounded-full hover:bg-indigo-700 transition"
+              className="relative p-2 rounded-full hover:text-indigo-700 transition"
             >
               {/* Ícono de Carrito (Puedes usar un SVG o Tailwind Icon aquí) */}
               <FaShoppingCart className="text-white text-2xl hover:text-indigo-200 transition" />
